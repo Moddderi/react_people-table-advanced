@@ -32,10 +32,6 @@ export const PeopleTable: React.FC<Props> = ({ people }) => {
         person.fatherName?.toLowerCase().includes(lowerCaseQuery),
     );
 
-    if (!query) {
-      searchParams.delete('query');
-    }
-
     if (centuries.length) {
       filteredList = filteredList.filter(person =>
         centuries.includes(String(Math.ceil(+person.born / 100))),
